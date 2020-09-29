@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2137,7 +2137,7 @@ const fetcher = (...args) => axios__WEBPACK_IMPORTED_MODULE_0___default()(...arg
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!***********************************!*\
   !*** multi ./pages/index/[id].js ***!
   \***********************************/

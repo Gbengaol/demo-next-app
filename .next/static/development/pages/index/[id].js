@@ -8410,7 +8410,7 @@ var fetcher = function fetcher() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 1:
 /*!*******************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Findex%2F%5Bid%5D&absolutePagePath=C%3A%5CUsers%5Cgolufeyimi%5CDesktop%5CGbenga%5CNext%20Applications%5Cnextapp%5Cpages%5Cindex%5C%5Bid%5D.js ***!
   \*******************************************************************************************************************************************************************************************/
@@ -8433,5 +8433,5 @@ module.exports = dll_82519ec661270f7f484f;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=[id].js.map

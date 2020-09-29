@@ -2,6 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import useData from "../custom-hooks/useData";
 import Axios from "axios";
+import { toast } from "react-toastify";
 
 const prices = () => {
   const [state, setState] = useState({
@@ -17,6 +18,9 @@ const prices = () => {
         `https://jsonplaceholder.typicode.com/users/${item}`
       );
       if (data.status === 200) {
+        toast("Deleted successfully!", {
+          type: "success",
+        });
         const newResult = state.res.filter((res) => {
           return res.id !== item;
         });
@@ -24,6 +28,7 @@ const prices = () => {
           ...state,
           res: newResult,
         });
+
         return;
       }
       return alert("Unable to delete");
