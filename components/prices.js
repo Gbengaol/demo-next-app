@@ -1,13 +1,17 @@
-import { useState } from "react";
 import Link from "next/link";
 import useData from "../custom-hooks/useData";
 import Axios from "axios";
 import { toast } from "react-toastify";
+import { usePricesStore } from "../store/pricesStore";
+import { useCallback } from "react";
 
 const prices = () => {
-  const [state, setState] = useState({
-    res: [],
-  });
+  const { res, setRes } = usePricesStore(
+    useCallback((state) => ({
+      res: state.res,
+      setRes: state.setRes,
+    }))
+  );
 
   const { data, isError } = useData(
     "https://jsonplaceholder.typicode.com/posts"
@@ -21,13 +25,10 @@ const prices = () => {
         toast("Deleted successfully!", {
           type: "success",
         });
-        const newResult = state.res.filter((res) => {
+        const newResult = res.filter((res) => {
           return res.id !== item;
         });
-        setState({
-          ...state,
-          res: newResult,
-        });
+        setRes(newResult);
 
         return;
       }
@@ -36,17 +37,14 @@ const prices = () => {
       alert(error);
     }
   };
-  if (!state.res.length && data) {
-    setState({
-      ...state,
-      res: data,
-    });
+  if (!res.length && data) {
+    setRes(data);
   }
   if (isError) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
   return (
     <div className="card mb-5">
-      {state.res.map((each) => {
+      {res.map((each) => {
         return (
           <div
             className="card-header d-flex justify-content-between m-2"
